@@ -16,43 +16,33 @@ const WidgetSmTitle = styled.div`
     font-weight: 600;
 ` 
 
-const WidgetSmList = styled.ul`
+const WidgetSmList = styled.form`
     margin: 0;
     padding: 0;
     list-style: none;
 
 `
 
-const WidgetSmListItem = styled.li`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0px;
+const NewUserField = styled.div.attrs({className:'p-3 shadow-md align-center'})`
+    width: 400px;
+  display: flex;
+  /* flex-direction: column; */
+  margin-top: 10px;
+  margin-right: 20px;
 `
 
-const WidgetSmUser = styled.div`
-    display: flex;
-    flex-direction: column;
-
+const NewUserFieldLabel = styled.label.attrs({className:'px-3 align-center rounded'})`
+    margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  /* color: rgb(151, 150, 150); */
 `
 
-const WidgetSmUsername = styled.span`
-    font-weight: 600;
-`
-
-const WidgetSmUserTitle = styled.span`
-    font-weight: 300;
-`
-
-const WidgetSmButton = styled.button`
-    display: flex;
-    align-items: center;
-    border: none;
-    border-radius: 10px;
-    padding: 7px 10px;
-    background-color: #eeeef7;
-    color: #555;
-    cursor: pointer;
+const NewUserFieldInput = styled.textarea.attrs({className:'px-3 align-center rounded'})`
+    margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  /* color: rgb(151, 150, 150); */
 `
 
 const styling = {
@@ -70,83 +60,20 @@ const styling = {
 const WidgetSm = () => {
   return (
     <Container>
-      <WidgetSmTitle>New Join Members</WidgetSmTitle>
+      <WidgetSmTitle>Enter Job Description</WidgetSmTitle>
       <WidgetSmList>
-        <WidgetSmListItem>
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            style={styling.widgetSmImg}
-          />
-          <WidgetSmUser>
-            <WidgetSmUsername>Anna Keller</WidgetSmUsername>
-            <WidgetSmUserTitle>Software Engineer</WidgetSmUserTitle>
-          </WidgetSmUser>
-          <WidgetSmButton>
-            <Visibility style={styling.widgetSmIcon} />
-            Display
-          </WidgetSmButton>
-        </WidgetSmListItem>
-        <WidgetSmListItem>
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            style={styling.widgetSmImg}
-          />
-          <WidgetSmUser>
-            <WidgetSmUsername>Anna Keller</WidgetSmUsername>
-            <WidgetSmUserTitle>Software Engineer</WidgetSmUserTitle>
-          </WidgetSmUser>
-          <WidgetSmButton>
-            <Visibility style={styling.widgetSmIcon} />
-            Display
-          </WidgetSmButton>
-        </WidgetSmListItem>
-        <WidgetSmListItem>
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            style={styling.widgetSmImg}
-          />
-          <WidgetSmUser>
-            <WidgetSmUsername>Anna Keller</WidgetSmUsername>
-            <WidgetSmUserTitle>Software Engineer</WidgetSmUserTitle>
-          </WidgetSmUser>
-          <WidgetSmButton>
-            <Visibility style={styling.widgetSmIcon} />
-            Display
-          </WidgetSmButton>
-        </WidgetSmListItem>
-        <WidgetSmListItem>
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            style={styling.widgetSmImg}
-          />
-          <WidgetSmUser>
-            <WidgetSmUsername>Anna Keller</WidgetSmUsername>
-            <WidgetSmUserTitle>Software Engineer</WidgetSmUserTitle>
-          </WidgetSmUser>
-          <WidgetSmButton>
-            <Visibility style={styling.widgetSmIcon} />
-            Display
-          </WidgetSmButton>
-        </WidgetSmListItem>
-        <WidgetSmListItem>
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            style={styling.widgetSmImg}
-          />
-          <WidgetSmUser>
-            <WidgetSmUsername>Anna Keller</WidgetSmUsername>
-            <WidgetSmUserTitle>Software Engineer</WidgetSmUserTitle>
-          </WidgetSmUser>
-          <WidgetSmButton>
-            <Visibility style={styling.widgetSmIcon} />
-            Display
-          </WidgetSmButton>
-        </WidgetSmListItem>
+      <NewUserField>
+        <NewUserFieldLabel>Education</NewUserFieldLabel>
+        <NewUserFieldInput type="textarea" placeholder="Enter Education" />
+      </NewUserField>
+      <NewUserField>
+        <NewUserFieldLabel>Skills</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="Enter Skills" />
+      </NewUserField>
+      <NewUserField>
+        <NewUserFieldLabel>Work Experience</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="Enter Experience" />
+      </NewUserField>
       </WidgetSmList>
     </Container>
   )

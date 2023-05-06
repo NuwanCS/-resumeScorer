@@ -9,6 +9,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     flex: 4;
+
 `
 
 const ResumeListItem = styled.div`
@@ -83,10 +84,6 @@ const ResumeList = () => {
             <Link to={"/resume/" + params.row.id}>
               <ResumeListEdit>Edit</ResumeListEdit>
             </Link>
-            <DeleteOutline
-              style={styling.ResumeListDelete}
-              onClick={() => handleDelete(params.row.id)}
-            />
           </>
         );
       },
@@ -94,7 +91,7 @@ const ResumeList = () => {
   ];
 
   return (
-   <Container>
+   <Container className='align-center justify-center rounded'>
       <DataGrid
         rows={data}
         disableSelectionOnClick

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import { DataGrid } from "@mui/x-data-grid";
 import { DeleteOutline } from "@mui/icons-material";
 import { userRows } from "../dummyDate";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import styled from 'styled-components'
+import Modal from '../components/Modal';
+import Api from '../api/api';
 
 const Container = styled.div`
      flex: 4;
@@ -38,8 +42,46 @@ const UserListDelete = {
     cursor: 'pointer'
 }
 
+const UserTitleContainer = styled.div`
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const UserTitle = styled.h1`
+  
+`
+
+const UserAddButton = styled.button`
+  width: 80px;
+  border: none;
+  padding: 5px;
+  background-color: teal;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+`
+
 const UserList = () => {
     const [data, setData] = useState(userRows);
+    const [openModal, setOpenModal] = useState(false);
+
+    const getData = async () => {
+      try {
+        const res = await Api.user.getUsers();
+        console.log(res);
+        // setData(res)
+        // toast.success('user added');
+      } catch (e) {
+        console.log('error---', e);
+        // toast.error('User creation error');
+      }
+    }
+    
+    useEffect (() => {
+      getData()
+    },[])
 
     const handleDelete = (id) => {
       setData(data.filter((item) => item.id !== id));
@@ -93,6 +135,11 @@ const UserList = () => {
   
     return (
       <Container>
+        <UserTitleContainer>
+      <Link to="/newUser">
+        <UserAddButton>Create</UserAddButton>
+      </Link>
+    </UserTitleContainer>
         <DataGrid
           rows={data}
           disableSelectionOnClick

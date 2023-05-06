@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import axios from 'axios';
 
 const Container = styled.div`
      flex: 2;
@@ -41,6 +41,35 @@ const WidgetLgImg = styled.img`
   margin-right: 10px;
 `
 
+const WidgetSmList = styled.form`
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+`
+
+const NewUserField = styled.div.attrs({className:'p-3 shadow-md align-center'})`
+    width: 400px;
+  display: flex;
+  /* flex-direction: column; */
+  margin-top: 10px;
+  margin-right: 20px;
+`
+
+const NewUserFieldLabel = styled.label.attrs({className:'px-3 align-center rounded'})`
+    margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  /* color: rgb(151, 150, 150); */
+`
+
+const NewUserFieldInput = styled.input.attrs({className:'px-3 align-center rounded'})`
+    margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  /* color: rgb(151, 150, 150); */
+ ` 
+
 const styling = {
     widgetLgImg : {
         width: '40px',
@@ -59,75 +88,29 @@ const WidgetLg = () => {
 
   return (
     <Container>
-      <WidgetLgTitle>Latest transactions</WidgetLgTitle>
-      <WidgetLgTable>
-        <WidgetLgTr>
-          <WidgetLgTh>Customer</WidgetLgTh>
-          <WidgetLgTh>Date</WidgetLgTh>
-          <WidgetLgTh>Amount</WidgetLgTh>
-          <WidgetLgTh>Status</WidgetLgTh>
-        </WidgetLgTr>
-        <WidgetLgTr>
-          <WidgetLgUser>
-            <WidgetLgImg
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-              style={styling.widgetLgImg}
-            />
-            <span className="widgetLgName">Susan Carol</span>
-          </WidgetLgUser>
-          <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
-          <td className="widgetLgStatus">
-            <Button type="Approved" />
-          </td>
-        </WidgetLgTr>
-        <WidgetLgTr>
-          <WidgetLgUser>
-            <WidgetLgImg
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-              style={styling.widgetLgImg}
-            />
-            <span className="widgetLgName">Susan Carol</span>
-          </WidgetLgUser>
-          <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
-          <td className="widgetLgStatus">
-            <Button type="Declined" />
-          </td>
-        </WidgetLgTr>
-        <WidgetLgTr>
-          <WidgetLgUser>
-            <WidgetLgImg
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-              style={styling.widgetLgImg}
-            />
-            <span className="widgetLgName">Susan Carol</span>
-          </WidgetLgUser>
-          <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
-          <td className="widgetLgStatus">
-            <Button type="Pending" />
-          </td>
-        </WidgetLgTr>
-        <WidgetLgTr>
-          <WidgetLgUser>
-            <WidgetLgImg
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
-              style={styling.widgetLgImg}
-            />
-            <span className="widgetLgName">Susan Carol</span>
-          </WidgetLgUser>
-          <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
-          <td className="widgetLgStatus">
-            <Button type="Approved" />
-          </td>
-        </WidgetLgTr>
-      </WidgetLgTable>
+      <WidgetLgTitle>Extracted Features</WidgetLgTitle>
+      <WidgetSmList>
+      <NewUserField>
+        <NewUserFieldLabel>Name</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="abc@gmail.com" />
+      </NewUserField>
+      <NewUserField>
+        <NewUserFieldLabel>Email</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="abc@gmail.com" />
+      </NewUserField>
+      <NewUserField>
+        <NewUserFieldLabel>Education</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="abc@gmail.com" />
+      </NewUserField>
+      <NewUserField>
+        <NewUserFieldLabel>Skills</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="abc@gmail.com" />
+      </NewUserField>
+      <NewUserField>
+        <NewUserFieldLabel>Work Experience</NewUserFieldLabel>
+        <NewUserFieldInput type="text" placeholder="abc@gmail.com" />
+      </NewUserField>
+      </WidgetSmList>
     </Container>
   )
 }

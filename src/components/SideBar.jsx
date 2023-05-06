@@ -64,7 +64,6 @@ const SideBar = () => {
     <Sidebar>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarTitle>Dashboard</SidebarTitle>
           <SidebarList>
           <Link to="/" className="link">
             <SidebarListItem active>
@@ -72,14 +71,9 @@ const SideBar = () => {
               Home
             </SidebarListItem>
             </Link>
-            <SidebarListItem>
-              <Timeline style={sidebarIcon} />
-              Analytics
-            </SidebarListItem>
           </SidebarList>
         </SidebarMenu>
         <SidebarMenu>
-          <SidebarTitle>Quick Menu</SidebarTitle>
           <SidebarList>
           <Link to="/users" className="link">
               <SidebarListItem>
@@ -93,6 +87,16 @@ const SideBar = () => {
                 Resumes
               </SidebarListItem>
           </Link>   
+          </SidebarList>
+        </SidebarMenu>
+        <SidebarMenu>
+          <SidebarList>
+          <Link to="/login" className="link">
+            <SidebarListItem active>
+              <LineStyle style={sidebarIcon} />
+              Logout
+            </SidebarListItem>
+            </Link>
           </SidebarList>
         </SidebarMenu>
       </SidebarWrapper>
